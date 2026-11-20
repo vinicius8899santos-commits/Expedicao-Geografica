@@ -1,0 +1,128 @@
+/* accessibility.css — acessibilidade: foco visível, leitor de tela, botão e painel de
+ * narração, texto só para leitores de tela e preferências do sistema (movimento reduzido,
+ * alto contraste). */
+
+/* ----- texto visível só para leitores de tela ----- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ----- link "pular para o conteúdo" (aparece ao apertar Tab) ----- */
+.skip {
+  position: fixed;
+  top: -60px;
+  left: 70px;
+  z-index: 100;
+  background: var(--gold);
+  color: #3b2a00;
+  font-weight: 800;
+  padding: 10px 16px;
+  border-radius: 0 0 12px 12px;
+  text-decoration: none;
+}
+.skip:focus { top: 0; }
+
+/* ----- foco visível em TODOS os elementos interativos ----- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+  outline: 4px solid var(--gold);
+  outline-offset: 2px;
+}
+/* título que recebe o foco ao mudar de tela: sem contorno (não é um controle) */
+#app [tabindex="-1"]:focus { outline: none; }
+#app:focus { outline: none; }
+
+/* ----- contraste e legibilidade ----- */
+::placeholder { color: #b9cdc0; opacity: 1; }
+.mute { opacity: 1; color: #c7dccf; }
+.phb small, .mc small { opacity: 1; color: #c7dccf; }
+
+/* espaço no topo para o botão fixo de acessibilidade não cobrir o conteúdo */
+#app { padding-top: 70px; }
+
+/* ----- botão de acessibilidade (sempre no canto superior esquerdo) ----- */
+.a11y-btn {
+  position: fixed;
+  top: calc(10px + env(safe-area-inset-top, 0px));
+  left: 10px;
+  z-index: 80;
+  width: 52px;
+  height: 52px;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--neon);
+  border: 3px solid #052010;
+  box-shadow: 0 0 16px rgba(92, 255, 61, .6), 0 3px 0 #1c7a12;
+}
+.a11y-btn img { width: 30px; height: 30px; display: block; }
+.a11y-btn[aria-expanded="true"] { background: var(--gold); }
+.a11y-btn.falando { animation: a11ypulse 1.2s ease-in-out infinite; }
+@keyframes a11ypulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(92, 255, 61, .6), 0 3px 0 #1c7a12; }
+  50%      { box-shadow: 0 0 26px rgba(255, 210, 63, 1), 0 3px 0 #1c7a12; }
+}
+
+/* ----- painel do leitor de tela ----- */
+.a11y-panel {
+  position: fixed;
+  top: calc(70px + env(safe-area-inset-top, 0px));
+  left: 10px;
+  z-index: 80;
+  width: min(94vw, 390px);
+  max-height: calc(100vh - 90px);
+  overflow: auto;
+  background: rgba(7, 26, 38, .98);
+  border: 2px solid var(--neon2);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 0 26px rgba(0, 0, 0, .75);
+}
+.a11y-panel[hidden] { display: none; }
+.a11y-panel h2 { font-size: 1.2rem; margin: 0 0 10px; }
+.a11y-row { margin: 10px 0; }
+.a11y-row label, .a11y-lab { display: block; font-weight: 700; margin-bottom: 6px; }
+.a11y-row label.chk { display: flex; margin: 0; font-weight: 400; }
+.a11y-langs { display: flex; gap: 8px; flex-wrap: wrap; }
+.a11y-langs button { margin: 0; flex: 1 1 140px; background: #0b2a1f; color: var(--neon); border: 2px solid var(--line); box-shadow: none; }
+.a11y-langs button[aria-pressed="true"] { background: var(--neon); color: #052010; }
+.a11y-row input[type="range"] { width: 100%; height: 30px; accent-color: var(--neon); }
+.a11y-ctrl { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0 6px; }
+.a11y-ctrl button { margin: 0; }
+.a11y-ctrl button.ativo { outline: 3px solid var(--gold); outline-offset: 2px; }
+.a11y-status { margin: 8px 0 0; font-weight: 700; color: var(--gold); }
+.a11y-voice { margin: 4px 0 0; font-size: .85rem; color: #c7dccf; }
+.a11y-close { position: absolute; top: 8px; right: 8px; margin: 0; min-height: 40px; padding: 4px 12px; }
+
+/* ----- preferências do sistema ----- */
+@media (prefers-reduced-motion: reduce) {
+  .compass,
+  .symin,
+  .a11y-btn.falando,
+  #app.tr > *:not(.fab):not(.ov) {
+    animation: none;
+  }
+  .pg i { animation-duration: .5s; }
+}
+
+/* modo de alto contraste do sistema (Windows) */
+@media (forced-colors: active) {
+  button, .card, .bar, .a11y-panel { border: 2px solid ButtonText; }
+  button:disabled { opacity: 1; color: GrayText; }
+}

@@ -1,13 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Expedição Geográfica: Basic Geography</title>
+  <meta name="description" content="Jogo educacional de Geografia com 5 fases, conquistas, leitor de tela e opção em inglês.">
+  <meta name="theme-color" content="#06141d">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- estilos: base, telas pequenas/grandes e acessibilidade -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/accessibility.css">
 </head>
 <body>
-    
-    <h1>Olá mundo</h1>
-    
+  <!-- primeiro item ao apertar Tab: pula direto para o conteúdo -->
+  <a class="skip" href="#app">Pular para o conteúdo</a>
+
+  <!-- todas as telas do jogo são desenhadas aqui dentro (js/game.js) -->
+  <main id="app" tabindex="-1"></main>
+
+  <!-- avisos invisíveis para leitores de tela -->
+  <div id="live" class="sr-only" role="status" aria-live="polite"></div>
+  <noscript>Este jogo precisa de JavaScript para funcionar.</noscript>
+
+  <!-- VLibras (Libras): marcação exigida pelo plugin; o script está em js/vlibras.js -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <!-- scripts (a ORDEM importa: dados → base → telas → jogo → acessibilidade → início) -->
+  <script src="js/utils.js"></script>
+  <script src="js/data/perguntas-pt.js"></script>
+  <script src="js/data/perguntas-en.js"></script>
+  <script src="js/data/ui-en.js"></script>
+  <script src="js/data/conteudo.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/screens/titulo.js"></script>
+  <script src="js/screens/creditos.js"></script>
+  <script src="js/screens/carregando.js"></script>
+  <script src="js/screens/fases.js"></script>
+  <script src="js/screens/tabuleiro.js"></script>
+  <script src="js/screens/pergunta.js"></script>
+  <script src="js/screens/resultado.js"></script>
+  <script src="js/screens/fase-concluida.js"></script>
+  <script src="js/screens/conquistas.js"></script>
+  <script src="js/screens/fim.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/accessibility.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/vlibras.js"></script>
 </body>
 </html>

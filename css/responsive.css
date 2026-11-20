@@ -1,0 +1,31 @@
+/* responsive.css — ajustes para celulares, tablets e telas largas.
+ * (o resto do visual está em style.css) */
+
+/* Celulares (até 520px) */
+@media (max-width: 520px) {
+  /* as casas de Início e Próxima fase ficam estreitas: mostram só o ícone */
+  .lbl .lt { display: none; }
+  .lbl .li { display: inline; font-size: 1.1rem; }
+  .mboard { gap: 5px; }
+  .logo { width: 98%; }
+  .menu-btn { width: 92%; }
+}
+
+/* Telas até 640px: o painel de perguntas desce para baixo do tabuleiro */
+@media (max-width: 640px) {
+  .perg {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+  .perg .nums {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .mboard {
+    grid-template-rows: repeat(3, var(--cs)) auto;
+  }
+}
+
+/* Telas largas (computador): conteúdo um pouco mais largo */
+@media (min-width: 1100px) {
+  #app { max-width: 900px; }
+}
