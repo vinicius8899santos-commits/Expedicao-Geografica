@@ -16,7 +16,7 @@ SCREENS.phases = function (a, T) {
       "Phase " + (i + 1) + ", " + p[1] + ", " + trs(p[2]) + ". " + ok + " of 10 questions answered. " + estado + ".");
     h += '<button class="phb' + (feita ? " dn" : "") + '" data-p="' + i + '"' + (liberada ? "" : " disabled") +
       ' aria-label="' + rotulo + '">' +
-      '<span class="pe" aria-hidden="true">' + p[0] + "</span>" +
+      '<span class="pe" aria-hidden="true">' + avatar(i, "rosto", "av-fase") + "</span>" +
       "<span><b>Fase " + (i + 1) + " · " + p[1] + (i === 4 ? " · Desafio Final" : "") + "</b><br><small>" + p[2] + " · " + ok + "/10</small></span>" +
       '<span class="st" aria-hidden="true">' + (feita ? "✅" : liberada ? "▶" : "🔒") + "</span></button>";
   });

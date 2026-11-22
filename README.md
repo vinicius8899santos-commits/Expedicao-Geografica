@@ -37,6 +37,7 @@ expedicao-geografica/
 │   └── screens/               uma tela por arquivo (titulo, creditos, fases, tabuleiro, pergunta...)
 └── assets/
     ├── images/                logo, capa, fundo, explorador
+    │   └── personagens/       imagens do Alex, Gaia, Nico, Luna e Ravi (inteira e rosto)
     ├── icons/                 ícone de acessibilidade e favicon
     └── sounds/                música de fundo
 ```

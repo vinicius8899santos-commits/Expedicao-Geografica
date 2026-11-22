@@ -28,7 +28,7 @@ SCREENS.title = function (a, T) {
     '</div>' +
     '<details class="card menu-det"><summary><b>Como jogar</b></summary>' + regras + '</details>' +
     '<details class="card menu-det"><summary><b>Personagens-guia</b></summary>' +
-    CHR.map(function (c) { return "<p>" + c[0] + " <b>" + c[1] + "</b>: " + c[2] + ".</p>"; }).join("") + '</details>' +
+    CHR.map(function (c, i) { return '<p class="pers">' + avatar(i, "rosto", "av-lista") + " <b>" + c[1] + "</b>: " + c[2] + ".</p>"; }).join("") + '</details>' +
     '<p class="copy">' + tx("© 2026 – Todos os direitos reservados.", "© 2026 – All rights reserved.") + '</p>' +
     '</section>' +
     (CFG.save === true && !CFG.noticeSeen ? avisoUI() : "") +

@@ -4,7 +4,7 @@ SCREENS.q = function (a, T) {
   var q = Q[S.q];
   var h = tabsUI() +
     barUI("Fase " + (S.ph + 1) + " · Pergunta " + S.num + (S.rev ? " · Tentativa " + (S.rev + 1) + " de 3" : "")) +
-    '<div class="card"><p class="mute">' + q[0] + '</p><h2 id="qt">' + q[1] + '</h2>' +
+    '<div class="card"><p class="mute pers">' + avatar(S.ph, "rosto", "av-peq") + " " + q[0].replace(/^[^A-Za-zÀ-ÿ]+/, "") + '</p><h2 id="qt">' + q[1] + '</h2>' +
     '<div role="radiogroup" aria-labelledby="qt">';
 
   S.ord.forEach(function (o, k) {

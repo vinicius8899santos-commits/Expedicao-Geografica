@@ -384,10 +384,11 @@ textarea {
 }
 
 .mboard .tk {
-  width:calc(var(--cs)*.34);
-  height:calc(var(--cs)*.34);
-  font-size:calc(var(--cs)*.22);
-  border-width:1px;
+  width: calc(var(--cs) * .52);
+  height: calc(var(--cs) * .52);
+  border-width: 1px;
+  padding: 0;
+  overflow: hidden;
 }
 
 .perg {
@@ -733,3 +734,20 @@ textarea {
   max-width: 560px;
   margin: 8px 0 0;
 }
+
+/* ----- Imagens dos personagens (rosto e corpo) ----- */
+.av {
+  display: block;
+  object-fit: cover;
+  object-position: top;
+  background: #0b2a1f;
+  border: 2px solid var(--neon2);
+}
+.av-fase  { width: 58px; height: 58px; border-radius: 50%; }                     /* botões das fases */
+.av-peao  { width: 100%; height: 100%; border: 0; border-radius: 50%; }          /* peão no tabuleiro */
+.av-barra { display: inline-block; width: 34px; height: 34px; border-radius: 50%; vertical-align: middle; margin-right: 6px; border-color: var(--neon); }
+.av-lista { display: inline-block; width: 44px; height: 44px; border-radius: 50%; vertical-align: middle; margin-right: 6px; }
+.av-peq   { display: inline-block; width: 32px; height: 32px; border-radius: 50%; vertical-align: middle; margin-right: 6px; }
+.av-conq  { width: 76px; height: 96px; border-radius: 14px; }                    /* aba de conquistas */
+.av-conq-g { width: 120px; height: 150px; border-radius: 18px; margin: 0 auto; } /* conquista nova (fim de fase) */
+.pers { display: flex; align-items: center; gap: 6px; }

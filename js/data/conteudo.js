@@ -13,7 +13,17 @@ var P = 10;
 /* Posição [coluna, linha] das casas 1 a 9 na grade de 8 colunas do tabuleiro. */
 var CL = [[2, 1], [3, 1], [4, 1], [4, 2], [4, 3], [5, 3], [6, 3], [6, 2], [7, 2]];
 
-/* Fases: [ícone, personagem, tema] */
+/* Imagens dos personagens, NA ORDEM DAS FASES: 0 Alex, 1 Gaia, 2 Nico, 3 Luna, 4 Ravi.
+ *  cheio = imagem inteira (conquistas) | rosto = recorte do rosto (ícones, peões, botões) */
+var AVATARES = [
+  { id: "alex", cheio: "assets/images/personagens/alex.png", rosto: "assets/images/personagens/alex-rosto.png" },
+  { id: "gaia", cheio: "assets/images/personagens/gaia.png", rosto: "assets/images/personagens/gaia-rosto.png" },
+  { id: "nico", cheio: "assets/images/personagens/nico.png", rosto: "assets/images/personagens/nico-rosto.png" },
+  { id: "luna", cheio: "assets/images/personagens/luna.png", rosto: "assets/images/personagens/luna-rosto.png" },
+  { id: "ravi", cheio: "assets/images/personagens/ravi.png", rosto: "assets/images/personagens/ravi-rosto.png" }
+];
+
+/* Fases: [ícone (emoji reserva), personagem, tema]. Na tela aparece a IMAGEM do personagem (AVATARES). */
 var PH = [
   ["🧭", "Alex", "Exploração e localização"],
   ["🌍", "Gaia", "Sociedade e economia"],
@@ -22,7 +32,8 @@ var PH = [
   ["🍃", "Ravi", "Desafio Final · perguntas difíceis"]
 ];
 
-/* Conquistas: [ícone, nome, descrição]. As 5 primeiras são das fases; a 6ª é o REI DA GEOGRAFIA. */
+/* Conquistas: [ícone (emoji reserva), nome, descrição]. As 5 primeiras mostram a imagem do personagem da fase
+ * (AVATARES); a 6ª é o REI DA GEOGRAFIA e usa o troféu 🏆. */
 var ACH = [
   ["🧭", "Explorador Iniciante", "Concluiu a Fase 1 com Alex: orientação e localização."],
   ["🌍", "Analista da Sociedade", "Concluiu a Fase 2 com Gaia: sociedade e economia."],

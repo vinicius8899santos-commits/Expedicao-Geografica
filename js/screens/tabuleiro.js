@@ -1,10 +1,10 @@
 /* tabuleiro.js — tabuleiro da fase: caminho com 9 casas e painel de 10 perguntas.
  * As perguntas são liberadas em ordem (1 → 2 → 3 ...). */
 
-/** Peões (o símbolo é o do personagem da fase) numa casa do tabuleiro. */
+/** Peões (a imagem é a do personagem da fase) numa casa do tabuleiro. */
 function tk(i) {
   return S.t.filter(function (t) { return t.pos === i; }).map(function (t) {
-    return '<span class="tk' + (S.fresh ? " symin" : "") + '" title="' + t.n + '">' + PH[S.ph][0] + "</span>";
+    return '<span class="tk' + (S.fresh ? " symin" : "") + '" title="' + t.n + '">' + avatar(S.ph, "rosto", "av-peao") + "</span>";
   }).join("");
 }
 
@@ -21,7 +21,7 @@ SCREENS.board = function (a, T) {
     "Board: you are on square " + T.pos + " of " + P + ". " + falta + " more correct answers to " + (S.ph === 4 ? "finish the Final Challenge" : "reach the next phase") + ".");
 
   var h = tabsUI() +
-    barUI(" Fase " + (S.ph + 1) + " · " + PH[S.ph][1], '<span class="' + (S.fresh ? "symin" : "") + '" aria-hidden="true">' + PH[S.ph][0] + "</span>") +
+    barUI(" Fase " + (S.ph + 1) + " · " + PH[S.ph][1], '<span class="' + (S.fresh ? "symin" : "") + '" aria-hidden="true">' + avatar(S.ph, "rosto", "av-barra") + "</span>") +
     scoreUI() + '<p class="sr-only">' + resumo + '</p><div class="mboard">';
 
   // desenho do caminho (decorativo para leitores de tela: o resumo acima descreve a posição)
