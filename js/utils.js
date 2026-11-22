@@ -19,6 +19,13 @@ function tx(pt, en) {
   return LANG === "en" ? en : pt;
 }
 
+/** Imagem de um personagem. i = 0..4 (Alex, Gaia, Nico, Luna, Ravi);
+ *  tipo = "rosto" (recorte pequeno) ou "cheio" (imagem inteira); classe = estilo extra (css/style.css). */
+function avatar(i, tipo, classe) {
+  var a = AVATARES[i];
+  return '<img class="av ' + (classe || "") + '" src="' + (tipo === "cheio" ? a.cheio : a.rosto) + '" alt="" aria-hidden="true">';
+}
+
 /** Embaralha os números 0..n-1 (algoritmo de Fisher-Yates: sorteio justo). */
 function embaralhar(n) {
   var a = [], i, j, t;
