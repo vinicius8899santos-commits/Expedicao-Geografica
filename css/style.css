@@ -751,3 +751,11 @@ textarea {
 .av-conq  { width: 76px; height: 96px; border-radius: 14px; }                    /* aba de conquistas */
 .av-conq-g { width: 120px; height: 150px; border-radius: 18px; margin: 0 auto; } /* conquista nova (fim de fase) */
 .pers { display: flex; align-items: center; gap: 6px; }
+
+/* banner de acerto/erro da tela de resultado */
+.res .res-img {
+  width: min(100%, 480px);
+  max-width: 100%;
+  display: block;
+  margin: 10px auto;
+}

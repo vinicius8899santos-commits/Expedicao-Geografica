@@ -73,10 +73,11 @@ function confirmarResposta() {
     S.pp[S.ph][kq] = 1;
     T.pos = cnt();
     T.pts += 3;
-    S.msg = { g: "ex", k: "ok", ok: 1, fim: T.pos >= P };         // o texto é montado em resultado.js
+    S.msg = { k: "ok", ok: 1, fim: T.pos >= P };         // o texto é montado em resultado.js
   } else {
-    if (S.rev >= 2) S.pp[S.ph][kq] = 2;
-    S.msg = S.rev >= 2 ? { g: "ex", k: "fail", ok: 0 } : { g: "ex", k: "retry", rv: 1, ok: 0 };
+    var ultima = S.rev >= TENTATIVAS - 1;            // era a última tentativa?
+    if (ultima) S.pp[S.ph][kq] = 2;
+    S.msg = ultima ? { k: "fail", ok: 0 } : { k: "retry", rv: 1, ok: 0 };
   }
   go("res");
 }

@@ -12,7 +12,7 @@ SCREENS.title = function (a, T) {
     '<p><b>Tabuleiro:</b> cada acerto avança 1 casa automaticamente. Ao chegar à Próxima fase, você ganha 15 pontos e uma conquista, e a fase seguinte é desbloqueada. A Fase 5 é o Desafio Final e encerra o jogo.</p>' +
     '<p><b>Pontos:</b> cada resposta correta, com justificativa, vale 3.</p>' +
     '<p><b>Loja 🛒:</b> use os pontos em apoios.</p>' +
-    '<p><b>Errou?</b> Cada pergunta tem 3 tentativas: a cada erro, a alternativa errada é desativada; no terceiro erro, o jogo explica a resposta. Uma pergunta que não foi acertada pode ser tentada de novo depois.</p>' +
+    '<p><b>Errou?</b> Cada pergunta tem 1 tentativa: ao errar, o jogo explica a resposta e a pergunta fica marcada para você tentar de novo depois.</p>' +
     '<p><b>Progresso:</b> ' + tx(
       "o jogo salva sozinho neste navegador e mantém o lugar onde você parou: use Continuar jogo depois. Para recomeçar, use Novo jogo (o jogo pede confirmação).",
       "the game saves by itself in this browser and keeps the place where you stopped: use Continue game later. To start over, use New game (the game asks you to confirm).") + '</p>';

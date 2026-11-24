@@ -123,7 +123,7 @@ function shopUI(T) {
   });
   return h + '<p class="mute">' +
     (S.scr === "q" ? "Os apoios são usados na hora. " : "Os apoios comprados ficam guardados na 🎒 e podem ser usados em qualquer pergunta. ") +
-    "Errou? Cada pergunta tem 3 tentativas, sem custo.</p></div></div>";
+    "</p></div></div>";
 }
 
 function bindShop(T, a) {

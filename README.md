@@ -36,7 +36,7 @@ expedicao-geografica/
 │   │   └── conteudo.js        fases, conquistas, loja, personagens
 │   └── screens/               uma tela por arquivo (titulo, creditos, fases, tabuleiro, pergunta...)
 └── assets/
-    ├── images/                logo, capa, fundo, explorador
+    ├── images/                logo, capa, fundo, acerto, erro
     │   └── personagens/       imagens do Alex, Gaia, Nico, Luna e Ravi (inteira e rosto)
     ├── icons/                 ícone de acessibilidade e favicon
     └── sounds/                música de fundo
@@ -57,6 +57,8 @@ expedicao-geografica/
 - **Perguntas**: `js/data/perguntas-pt.js`. Cada pergunta é
   `[personagem, enunciado, [alternativas], dica, explicação]`; a **1ª alternativa é a correta**
   (o jogo embaralha). Mantenha a mesma ordem em `perguntas-en.js`.
+- **Tentativas por pergunta**: constante `TENTATIVAS` em `js/data/conteudo.js` (hoje 1: errou, o jogo explica a resposta).
+- **Imagens de acerto e erro**: `assets/images/acerto.png` e `assets/images/erro.png` (tela de resultado).
 - **Cores**: variáveis em `:root` no começo de `css/style.css`.
 - **Pontos** (3 por acerto, 15 por fase, preços da loja): `js/game.js` e `js/data/conteudo.js`.
 - **Textos novos em inglês**: acrescente o par `[português, english]` em `js/data/ui-en.js`.

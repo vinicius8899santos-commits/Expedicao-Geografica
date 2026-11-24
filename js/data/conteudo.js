@@ -5,8 +5,14 @@
 var IM = {
   logo: "assets/images/logo.png",      // logo (tela inicial e créditos)
   cv: "assets/images/capa.jpg",        // capa (tela final)
-  ex: "assets/images/explorador.png"   // explorador (telas de resultado)
+  ok: "assets/images/acerto.png",      // banner de ACERTO ("Você cartou, Parabéns!")
+  no: "assets/images/erro.png"         // banner de ERRO ("Você errou, Tente novamente")
 };
+
+/* Tentativas por pergunta. Com 1, ao errar o jogo já explica a resposta (a pergunta fica marcada
+ * para tentar de novo depois, pelo tabuleiro). Se mudar este número, revise também os textos que
+ * falam de tentativas (regras na tela inicial e dica da tela de carregamento). */
+var TENTATIVAS = 1;
 
 /* Tabuleiro: casas de 0 (Início) a P (Próxima fase). */
 var P = 10;

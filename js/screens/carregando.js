@@ -4,7 +4,7 @@ SCREENS.load = function (a) {
   var dicas = [
     "Leia a legenda do mapa antes de responder.",
     "Releia o enunciado com calma antes de escolher a resposta.",
-    "Errar faz parte: cada pergunta tem 3 tentativas.",
+    "Errar faz parte: o jogo explica a resposta e você pode tentar de novo depois.",
     "Os pontos compram apoios na Loja 🛒. Use com estratégia!",
     "Cada fase concluída desbloqueia a próxima e dá uma conquista."
   ];

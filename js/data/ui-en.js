@@ -148,6 +148,8 @@ var SX = [
   ["Progresso salvo apagado.", "Saved progress deleted."],
   ["Permitir", "Allow"],
   ["Agora não", "Not now"],
+  ["Cada pergunta tem 1 tentativa: ao errar, o jogo explica a resposta e a pergunta fica marcada para você tentar de novo depois.", "Each question has 1 attempt: if you get it wrong, the game explains the answer and the question stays marked for you to try again later."],
+  ["Errar faz parte: o jogo explica a resposta e você pode tentar de novo depois.", "Mistakes are part of the game: the game explains the answer and you can try again later."],
 ];
 // os pares mais longos são aplicados primeiro (evita traduzir só um pedaço)
 SX.sort(function (a, b) { return b[0].length - a[0].length; });

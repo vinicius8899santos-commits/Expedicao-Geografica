@@ -22,7 +22,9 @@ function mensagemResultado(m) {
 SCREENS.res = function (a, T) {
   var m = S.msg, txt = mensagemResultado(m);
   a.innerHTML = tabsUI() +
-    '<div class="res">' + barUI(txt.t) + '<img src="' + IM[m.g] + '" alt=""><div class="card">' + txt.e + "</div>" +
+    '<div class="res">' + barUI(txt.t) + '<img class="res-img" src="' + (m.ok ? IM.ok : IM.no) + '" alt="' + (m.ok
+      ? tx("Parabéns! Os cinco personagens comemoram o seu acerto.", "Congratulations! The five characters celebrate your correct answer.")
+      : tx("Os cinco personagens estão tristes: você errou. Tente novamente.", "The five characters are sad: you got it wrong. Try again.")) + '"><div class="card">' + txt.e + "</div>" +
     (m.rv
       ? '<div class="c"><button id="rv">🔁 Tentar novamente (tentativa ' + (S.rev + 2) + " de 3)</button></div>"
       : '<div class="c"><button id="cont">Continuar ➜</button></div>') +
