@@ -55,6 +55,8 @@ function fixState(s) {
   if (!Array.isArray(s.pp) || s.pp.length !== 5) s.pp = base.pp;
   s.pp = s.pp.map(function (a) { return Array.isArray(a) && a.length === 10 ? a : zeros(); });
   if (!Array.isArray(s.done) || s.done.length !== 5) s.done = [0, 0, 0, 0, 0];
+  // fase concluída = as 10 perguntas ✅ (conserta partidas salvas antes desta regra)
+  s.done.forEach(function (d, i) { if (d) s.pp[i] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]; });
   s.t[0].pts = Number(s.t[0].pts) || 0;
   s.t[0].pos = clamp(Number(s.t[0].pos) || 0, 0, P);
   if (!Array.isArray(s.hint)) s.hint = [];                    // formato antigo (texto) → lista

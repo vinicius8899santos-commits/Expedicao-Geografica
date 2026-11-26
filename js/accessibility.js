@@ -131,6 +131,11 @@ var A11Y = (function () {
   }
 
   function dTabuleiro() {
+    if (S.done[S.ph]) {
+      return [t2("Fase " + (S.ph + 1) + ", com " + PH[S.ph][1] + ". Esta fase está concluída: as 10 perguntas foram respondidas corretamente. Para jogar de novo, use Novo jogo na tela inicial.",
+                 "Phase " + (S.ph + 1) + ", with " + PH[S.ph][1] + ". This phase is completed: all 10 questions were answered correctly. To play again, use New game on the home screen."),
+              t2("O botão Voltar leva à escolha de fases. O botão do carrinho abre a loja.", "The Back button goes to the phase selection. The cart button opens the shop.")];
+    }
     var st = S.pp[S.ph], T = S.t[0], certas = [], erradas = [], nx = -1, bloq = 0, k;
     for (k = 0; k < 10; k++) {
       var trava = k > 0 && st[k - 1] === 0;

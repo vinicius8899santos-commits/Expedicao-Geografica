@@ -37,10 +37,10 @@ function cnt() {
   return S.pp[S.ph].filter(function (x) { return x === 1; }).length;
 }
 
-/** Abre uma fase (mantém o progresso; refaz do zero se ela já estava toda concluída). */
+/** Abre uma fase (mantém o progresso). Fase concluída: todas as perguntas ficam ✅ e só reabrem com "Novo jogo". */
 function openPh(i) {
   S.ph = i;
-  if (!S.pp[i] || S.pp[i].every(function (x) { return x === 1; })) S.pp[i] = zeros();
+  if (S.done[i]) S.pp[i] = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
   S.t[0].pos = cnt();
   S.hint = [];
   S.fresh = 1;

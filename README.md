@@ -82,6 +82,7 @@ expedicao-geografica/
 
 - Salva sozinho (no `localStorage` do navegador) a cada mudança de tela e quando a página é fechada ou escondida.
 - Guarda: fase, perguntas respondidas, pontos, apoios, conquistas e tela atual; as preferências ficam à parte.
+- Fases **concluídas** ficam com as 10 perguntas ✅ e só reabrem com **Novo jogo**.
 - Na tela inicial: **Continuar jogo** e **Novo jogo** (pede confirmação antes de apagar).
 - Em ⚙️ Configurações dá para desligar o salvamento e apagar o progresso salvo.
 - O progresso fica **neste navegador e neste aparelho**. Limpar os dados do navegador apaga o progresso.

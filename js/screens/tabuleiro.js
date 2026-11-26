@@ -20,9 +20,13 @@ SCREENS.board = function (a, T) {
     "Tabuleiro: você está na casa " + T.pos + " de " + P + ". Faltam " + falta + " acertos para " + (S.ph === 4 ? "concluir o Desafio Final" : "chegar à próxima fase") + ".",
     "Board: you are on square " + T.pos + " of " + P + ". " + falta + " more correct answers to " + (S.ph === 4 ? "finish the Final Challenge" : "reach the next phase") + ".");
 
+  if (S.done[S.ph]) resumo = tx("Fase concluída: as 10 perguntas foram respondidas corretamente.", "Phase completed: all 10 questions were answered correctly.");
+
   var h = tabsUI() +
     barUI(" Fase " + (S.ph + 1) + " · " + PH[S.ph][1], '<span class="' + (S.fresh ? "symin" : "") + '" aria-hidden="true">' + avatar(S.ph, "rosto", "av-barra") + "</span>") +
-    scoreUI() + '<p class="sr-only">' + resumo + '</p><div class="mboard">';
+    scoreUI() +
+    (S.done[S.ph] ? '<p class="mute c">' + tx("✅ Fase concluída! Para jogar de novo, use Novo jogo na tela inicial.", "✅ Phase completed! To play again, use New game on the home screen.") + "</p>" : "") +
+    '<p class="sr-only">' + resumo + '</p><div class="mboard">';
 
   // desenho do caminho (decorativo para leitores de tela: o resumo acima descreve a posição)
   h += '<div class="lbl ini" aria-hidden="true" style="grid-column:1;grid-row:1"><span class="lt">Início</span><span class="li">🚩</span><span class="pawns">' + tk(0) + "</span></div>";
