@@ -13,7 +13,9 @@ var CFG = {
   save: true,       // salvar o progresso automaticamente neste navegador
   noticeSeen: false,// o aviso sobre o salvamento já foi lido?
   rate: 1,          // velocidade da narração (0.6 a 1.6)
-  auto: false       // ler a tela automaticamente quando ela mudar
+  auto: false,      // ler a tela automaticamente quando ela mudar
+  lupaZ: 2,         // aumento da lupa (posição na lista: 0 = 1,5× ... 4 = 4×)
+  lupaT: 1          // tamanho da lente da lupa (0 pequena, 1 média, 2 grande)
 };
 var CO = 0;         // janela de configurações aberta?
 var CNOTE = "";     // mensagem curta dentro das configurações
@@ -32,6 +34,8 @@ function loadPrefs() {
     if (c.noticeSeen === true) CFG.noticeSeen = true;
     if (typeof c.rate === "number") CFG.rate = clamp(c.rate, 0.6, 1.6);
     if (c.auto === true) CFG.auto = true;
+    if (typeof c.lupaZ === "number") CFG.lupaZ = clamp(Math.round(c.lupaZ), 0, 4);
+    if (typeof c.lupaT === "number") CFG.lupaT = clamp(Math.round(c.lupaT), 0, 2);
   } catch (e) { /* sem armazenamento: usa os padrões */ }
 }
 

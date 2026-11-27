@@ -78,6 +78,12 @@ expedicao-geografica/
 - Teclado: `Tab` navega, `Enter`/`Espaço` ativam, setas escolhem a alternativa, `Esc` fecha janelas,
   e o primeiro `Tab` mostra o link "Pular para o conteúdo".
 
+## Lupa (baixa visão)
+
+- Botão 🔍 ao lado do botão de acessibilidade (canto superior esquerdo). Abre um painel: **Ligar a lupa**, **aumento** (1,5× a 4×) e **tamanho da lente**.
+- Com a lupa ligada, arraste a lente com o dedo ou o mouse (ou use as setas do teclado) para ampliar o que estiver embaixo.
+- Código em `js/lupa.js`. A lente mostra uma cópia ampliada da tela; enquanto ela cobre uma região, os botões dali não recebem toque.
+
 ## Salvamento automático
 
 - Salva sozinho (no `localStorage` do navegador) a cada mudança de tela e quando a página é fechada ou escondida.

@@ -29,6 +29,7 @@ function setLang(l) {
   var pular = document.querySelector(".skip");
   if (pular) pular.textContent = l === "en" ? "Skip to content" : "Pular para o conteúdo";
   if (window.A11Y) A11Y.onLang();
+  if (window.LUPA) LUPA.onLang();
 }
 
 /** Traduz um texto em português para inglês usando RX (padrões) e SX (pares). */

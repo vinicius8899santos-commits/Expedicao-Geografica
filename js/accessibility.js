@@ -396,6 +396,7 @@ var A11Y = (function () {
   }
 
   function abrir() {
+    if (window.LUPA) LUPA.fecharPainel();      // um painel de cada vez
     painel.hidden = false;
     botao.setAttribute("aria-expanded", "true");
     rotular(); escolherVoz(); atualizar();

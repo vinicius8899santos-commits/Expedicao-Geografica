@@ -6,6 +6,7 @@
   var salvo = ld();
   if (salvo) FREE = !!salvo.F;      // lembra o "modo professor" da partida salva
   setLang(CFG.lang);                // idioma (js/i18n.js)
-  A11Y.init();                      // botão e painel do leitor de tela (js/accessibility.js)
+  A11Y.init();
+  LUPA.init();                      // botão e painel da lupa (js/lupa.js)                      // botão e painel do leitor de tela (js/accessibility.js)
   render();                         // desenha a tela inicial (js/game.js)
 })();

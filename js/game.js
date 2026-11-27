@@ -142,4 +142,5 @@ function render() {
     if (r) r.focus({ preventScroll: true });
   } else restoreFocus(chave);                              // redesenho comum: mantém o foco
   if (window.A11Y) A11Y.afterRender();
+  if (window.LUPA) LUPA.refresh();                        // a lupa copia a tela nova
 }
